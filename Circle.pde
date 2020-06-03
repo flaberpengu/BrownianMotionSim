@@ -2,8 +2,8 @@ class Particle{
   float xPos;
   float yPos;
   Particle(float width, float height){
-   xPos = width / 2;
-   yPos = height / 2;
+   xPos = random(width);
+   yPos = random(height);
   }
   void move(){
     int direction = (int)random(4);
@@ -20,6 +20,18 @@ class Particle{
       case 3:
         xPos -= 2;
         break;
+    }
+    if (xPos > 400){
+      xPos = 400;
+    }
+    else if (xPos < 0){
+      xPos = 0;
+    }
+    if (yPos > 400){
+      yPos = 400;
+    }
+    else if (yPos < 0){
+      yPos = 0;
     }
   }
   float getxPos(){
